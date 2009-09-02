@@ -1,0 +1,142 @@
+
+/* My VFF CSS file */
+/* gabi            */
+
+
+body     /* basic settings */
+{
+  margin:0;    /* for browser (in)compatibility */
+  padding:0;
+  color:black;
+  background-color:#eeeeee;
+  font-family:verdana, arial, sans-serif;
+  font-size:14px;
+  text-align:left;
+}
+
+.iebug {text-align:center;}   /* (another) IE bug... */
+
+.container  /* da "big box" */
+{
+  width:860px;
+  margin:auto;
+  margin-top:20px;
+  margin-bottom:20px;
+  background-color:white;
+  text-align:left;
+  
+  border:1px solid #006666;
+  background-image:url('vonal.png');
+  background-position:240px 140px;
+  background-repeat:no-repeat;
+  
+}
+
+/* 1em = 16px */
+
+#plakat
+{
+  margin:auto;
+  margin-top:10px;
+  margin-bottom:10px;
+}
+
+
+#logo
+{
+  float:left;
+  padding:0;
+  margin:20px 0px 0px 20px;
+  display: inline;          /* IE bug, what else? */
+}
+
+#head
+{
+  float:left;
+  margin:50px 50px;
+}
+
+.break {clear:both;}
+
+.menu {font-size:13px;}
+
+.topmenu
+{
+  float:left;
+  position:relative;
+  top:-10px;
+  left:140px; 
+}
+
+.leftmenu
+{
+  float:left;
+  width:60px;              /* does not work in IE without it */
+  margin:15px 0px 0px 45px;
+  line-height:250%;
+  
+  display: inline;          /* IE bug, what else? */
+}
+
+a.topmenu {padding:2px 25px;}
+
+a.leftmenu { }
+
+a.menu {text-decoration:none;}
+
+a.menu:link {color:#ff3399}
+a.menu:visited {color:#ff3399}
+a.menu:active {color:#ff3399}
+a.menu:hover {color:#006666; text-decoration:none}
+
+
+a.top {font-size:0.9em}
+
+a {text-decoration:none;}
+
+a:link {color:#006666}
+a:visited {color:#006666}
+a:active {color:#006666}
+a:hover {color:#ff3399; text-decoration:underline}
+
+.content  /* here comes the actual content */
+{
+  float:right;
+  width:450px;
+  margin-right:110px;
+  padding:0px 5px 0px 5px;
+  font-size:0.9em;
+  text-align:justify;
+  
+  display: inline;
+}
+
+
+.bold   {font-weight:bold;}
+.italic {font-style:italic;}
+
+h3.base {font-size:1.1em;}
+h3.autoren {font-size:1.3em;}
+h4 {font-size:1em;}
+
+ul.list {line-height:200%; font-size:1.2em; list-style-type:none;}
+
+.bigline {line-height:180%;}
+
+
+#hline       /* that nice horizontal line :) */
+{
+  width:750px;
+  color:#006666;
+  background-color:#006666;  /* cross browser compatibility - that means IE compatibility (*sigh*) */
+  border-width:0;
+  position:relative;
+  top:-10px;
+  height:1px;
+}
+
+
+/*#vonal {position:absolute; top:160px; left:310px;}*/ /*obsolete*/
+
+
+/* zold:#006666, rozsaszin:#ff3399 */
