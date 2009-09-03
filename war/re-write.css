@@ -7,6 +7,7 @@ body     /* basic settings */
 {
   margin:0;    /* for browser (in)compatibility */
   padding:0;
+  padding-bottom:20px;  /* IE workaround - from .container:margin-bottom:20px */
   color:black;
   background-color:#eeeeee;
   font-family:verdana, arial, sans-serif;
@@ -21,7 +22,7 @@ body     /* basic settings */
   width:860px;
   margin:auto;
   margin-top:20px;
-  margin-bottom:20px;
+  /*margin-bottom:20px;*/  /* IE workaround - it is now body:padding-bottom:20px */
   background-color:white;
   text-align:left;
   
@@ -117,11 +118,16 @@ a:hover {color:#ff3399; text-decoration:underline}
 
 h3.base {font-size:1.1em;}
 h3.autoren {font-size:1.3em;}
+h3 {font-size:1.4em;}
 h4 {font-size:1em;}
 
 ul.list {line-height:200%; font-size:1.2em; list-style-type:none;}
 
 .bigline {line-height:180%;}
+
+
+div.vspace {margin-top:100px;}   /* a little "fill" for almost empty pages */
+
 
 
 #hline       /* that nice horizontal line :) */
