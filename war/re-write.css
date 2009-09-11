@@ -117,18 +117,26 @@ a:hover {color:#ff3399; text-decoration:underline}
 .italic {font-style:italic;}
 
 h3.base {font-size:1.1em;}
-h3.autoren {font-size:1.3em;}
 h3 {font-size:1.4em;}
 h4 {font-size:1em;}
 
-ul.list {line-height:200%; font-size:1.2em; list-style-type:none;}
+ul.list {line-height:200%; /*font-size:1.1em;*/ list-style-type:none;}
 
 .bigline {line-height:180%;}
 
 
 div.vspace {margin-top:100px;}   /* a little "fill" for almost empty pages */
+div.fotos {float:right; margin:5px 10px; display: inline;}
 
-
+div.desc
+{
+  font-size:0.9em;
+  text-align: center;
+  font-weight: normal;
+  width: 120px;
+  margin: 2px;
+  
+}
 
 #hline       /* that nice horizontal line :) */
 {
