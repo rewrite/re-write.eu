@@ -33,7 +33,7 @@ body     /* basic settings */
   
 }
 
-/* 1em = 16px */
+/* 1em = 16px  - haha, yeah, when the default font size is 16px */
 
 #plakat
 {
@@ -85,31 +85,38 @@ a.leftmenu { }
 
 a.menu {text-decoration:none;}
 
-a.menu:link {color:#ff3399}
-a.menu:visited {color:#ff3399}
-a.menu:active {color:#ff3399}
-a.menu:hover {color:#006666; text-decoration:none}
+a.menu:link {color:#ff3399;}
+a.menu:visited {color:#ff3399;}
+a.menu:active {color:#ff3399;}
+a.menu:hover {color:#006666; text-decoration:none;}
 
 
 a.top {font-size:0.9em}
 
+
 a {text-decoration:none;}
 
-a:link {color:#006666}
-a:visited {color:#006666}
-a:active {color:#006666}
-a:hover {color:#ff3399; text-decoration:underline}
+a:link {color:#006666;}
+a:visited {color:#006666;}
+a:active {color:#006666;}
+a:hover {color:#ff3399; text-decoration:underline;}
 
 .content  /* here comes the actual content */
 {
   float:right;
   width:450px;
   margin-right:110px;
+/*  padding:0px 5px 0px 5px !important; padding:10px 5px 0px 5px;*/
   padding:0px 5px 0px 5px;
   font-size:0.9em;
   text-align:justify;
   
   display: inline;
+}
+
+#IEroot .content
+{
+  padding:10px 5px 0px 5px;
 }
 
 
@@ -144,10 +151,95 @@ div.desc
   color:#006666;
   background-color:#006666;  /* cross browser compatibility - that means IE compatibility (*sigh*) */
   border-width:0;
+/*  position:relative !important; position:static;*/
   position:relative;
   top:-10px;
   height:1px;
 }
+
+
+#IEroot #hline
+{
+  position:static;
+}
+
+
+/**********************/
+/*  2. DROP-DOWN MENU */
+/**********************/
+
+/*Basic Setup*/
+
+.dropnav {white-space:nowrap /*IE hack*/; float:left; width:600px; border:none; 
+  font-size:13px;
+  position:relative;
+  left:270px;
+  top:-19px;
+  color:#ff3399;
+  /*margin-top:30px;*/ /*background:rgb(225,225,225)*/; /*color:rgb(75,75,75);*/
+  
+} /*Color navigation bar normal mode*/
+.dropnav ul {list-style-type:none; margin:0px; padding:0px;}
+.dropnav ul li {float:left; z-index:auto !important /*Non-IE6*/; z-index:1000 /*IE6*/; /*border-right:solid 1px rgb(175,175,175);*/ /*width:100px;*/}
+.dropnav ul li a {float:none !important /*Non-IE6*/; float:left /*IE-6*/; display:block; /*height:2.1em; line-height:2.1em;*/ /*padding:0 16px 0 16px;*/ padding:2px 25px; text-decoration:none; /*font-weight:bold;*/ color:#ff3399;}
+.dropnav ul li a:visited{color:#ff3399;}
+.dropnav ul li ul {display:none; border:none;}
+
+/*Non-IE6 hovering*/
+.dropnav ul li:hover {position:relative;} /*Sylvain IE hack*/
+.dropnav ul li:hover a {/*background-color:#eeeeee;*/ text-decoration:none; color:#006666;} /*Color main cells hovering mode*/
+.dropnav ul li:hover ul {display:block; /*width:10.847em;*/ position:absolute; z-index:999; top:1.39em; /*top:2.3em;*/ margin-top:0.1em; left:0; border:solid 1px #006666; } 
+.dropnav ul li:hover ul li {float:none;}
+.dropnav ul li:hover ul li a {white-space:normal; display:block; width:12.0em; height:auto; line-height:1.3em; margin-left:0px;/*-1px;*/ /*padding:4px 16px 4px 16px;*/ padding-top:10px; padding-bottom:10px; /*border-left:solid 1px rgb(175,175,175);*/ background-color:#ffffff; font-weight:normal; color:#006666;} /*Color subcells normal mode*/
+.dropnav ul li:hover ul li a:hover {/*background-color:rgb(210,210,210);*/ text-decoration:none; color:#ff3399} /*Color subcells hovering mode*/
+
+/*IE6 hovering*/
+.dropnav table {position:absolute; top:0; left:-1px; border-collapse:collapse; /*border:0; padding:0;*/}
+.dropnav ul li a:hover {position:relative /*Sylvain IE hack*/; z-index:1000 /*Sylvain IE hack*/; background-color:none;/*#ffffff;*/ text-decoration:none; color:#006666;} /*Color main cells hovering mode*/
+.dropnav ul li a:hover ul {display:block; /*width:10.0em;*/ position:absolute; z-index:999; top:1.49em; t\op:1.39em; left:0; marg\in-top:0.1em; border:solid 1px #006666;}
+.dropnav ul li a:hover ul li a {white-space:normal; display:block; w\idth:12.0em; height:1px; line-height:1.3em; /*padding:4px 16px 4px 16px;*/padding-top:10px; padding-bottom:10px; /*border-left:solid 1px rgb(175,175,175); border-bottom: solid 1px rgb(175,175,175);*/ background-color:#ffffff; font-weight:normal; color:#006666;} /*Color subcells normal mode*/
+.dropnav ul li a:hover ul li a:hover {/*background-color:rgb(210,210,210);*/ text-decoration:none; color:#ff3399;} /*Color subcells hovering mode*/
+
+
+
+
+
+
+.dropleft {white-space:nowrap /*IE hack*/; float:left; width:60px; border:none; 
+  font-size:13px;
+/*  position:relative;
+  left:270px;
+  top:-19px;*/
+  color:#ff3399;
+      
+  margin:15px 0px 0px 45px;
+  line-height:250%;
+  
+  display: inline;          /* IE bug, what else? */
+  /*margin-top:30px;*/ /*background:rgb(225,225,225)*/; /*color:rgb(75,75,75);*/
+} /*Color navigation bar normal mode*/
+
+.dropleft ul {list-style-type:none; margin:0px; padding:0px;}
+.dropleft ul li {float:left; z-index:auto !important /*Non-IE6*/; z-index:1000 /*IE6*/; /*border-right:solid 1px rgb(175,175,175);*/ /*width:100px;*/}
+.dropleft ul li a {float:none !important /*Non-IE6*/; float:left /*IE-6*/; display:block; /*height:2.1em; line-height:2.1em;*/ /*padding:0 16px 0 16px;*/ padding:2px 25px; text-decoration:none; /*font-weight:bold;*/ color:#ff3399; width:6em;}
+.dropleft ul li a:visited{color:#ff3399;}
+.dropleft ul li ul {display:none; border:none;}
+
+/*Non-IE6 hovering*/
+.dropleft ul li:hover {position:relative;} /*Sylvain IE hack*/
+.dropleft ul li:hover a {/*background-color:#eeeeee;*/ text-decoration:none; color:#006666;} /*Color main cells hovering mode*/
+.dropleft ul li:hover ul {display:block; /*width:10.847em;*/ position:absolute; z-index:999; top:0; /*top:2.3em;*/  margin-top:0.1em; left:8em; border:solid 1px #006666; } 
+.dropleft ul li:hover ul li {float:none;}
+.dropleft ul li:hover ul li a {white-space:normal; display:block; width:12.0em; height:auto; line-height:1.3em; margin-left:0px;/*-1px;*/ /*padding:4px 16px 4px 16px;*/ padding-top:10px; padding-bottom:10px; /*border-left:solid 1px rgb(175,175,175);*/ background-color:#ffffff; font-weight:normal; color:#006666;} /*Color subcells normal mode*/
+.dropleft ul li:hover ul li a:hover {/*background-color:rgb(210,210,210);*/ text-decoration:none; color:#ff3399} /*Color subcells hovering mode*/
+
+/*IE6 hovering*/
+.dropleft table {position:absolute; top:0; left:-1px; border-collapse:collapse; /*border:0; padding:0;*/}
+.dropleft ul li a:hover {position:relative /*Sylvain IE hack*/; z-index:1000 /*Sylvain IE hack*/; background-color:none;/*#ffffff;*/ text-decoration:none; color:#006666;} /*Color main cells hovering mode*/
+.dropleft ul li a:hover ul {display:block; /*width:10.0em;*/ position:absolute; z-index:999; top:0; t\op:0; left:8em; marg\in-top:0.1em; border:solid 1px #006666;}
+.dropleft ul li a:hover ul li a {white-space:normal; display:block; w\idth:12.0em; height:1px; line-height:1.3em; /*padding:4px 16px 4px 16px;*/padding-top:10px; padding-bottom:10px; /*border-left:solid 1px rgb(175,175,175); border-bottom: solid 1px rgb(175,175,175);*/ background-color:#ffffff; font-weight:normal; color:#006666;} /*Color subcells normal mode*/
+.dropleft ul li a:hover ul li a:hover {/*background-color:rgb(210,210,210);*/ text-decoration:none; color:#ff3399;} /*Color subcells hovering mode*/
+
 
 
 /*#vonal {position:absolute; top:160px; left:310px;}*/ /*obsolete*/

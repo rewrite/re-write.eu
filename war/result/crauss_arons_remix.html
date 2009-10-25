@@ -1,0 +1,501 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+	<meta http-equiv="content-language" content="en" />
+	<title>Re-write</title>
+	<link rel="stylesheet" type="text/css" media="all" href="style.css" />
+	<script type="text/javascript">
+
+	// NOTE: jumpToLine() is not used anymore. Left it here for reference, if jumping based on
+	// line numbers is ever needed in the future..
+	function jumpToLine(lineNumber) {
+		var cntLinesTotal = 23; // I need this CONSTANT
+		var div = document.getElementById("divSource0");
+		var lineHeight = Math.floor(div.scrollHeight / cntLinesTotal);
+		var jump = (lineNumber - 1) * lineHeight;
+		div.scrollTop = jump;
+	}
+
+	function jumpToId(tabID, idx) {
+		var lineMarginTop = 30;
+		var div = document.getElementById("divSource" + tabID);
+		div.scrollTop = document.getElementById(idx).offsetTop - div.offsetTop - lineMarginTop;
+	}
+	
+	function onLoad() {
+	}
+
+	// assuming all tabs are marked with id="tabN"
+	// and all divs corresponding to the tabs are marked id="divSourceN"
+	function handleTabClick(tabID) {
+		var i, tabSource;
+		for (i=1, tabSource=document.getElementById("tab"+i); tabSource!=null; i++, tabSource=document.getElementById("tab"+i)) {
+			tabSource.className = "";
+			document.getElementById("divSource"+i).className = "DivSourceOff"
+		}
+		
+		document.getElementById("tab"+tabID).className="current";
+		document.getElementById("divSource"+tabID).className = "DivSourceOn";
+	}
+
+	var lastHighlightedWord;
+	
+	function wlinkClick(tabID, idx) {
+		idx = "id" + idx;
+		if (lastHighlightedWord != null)
+			lastHighlightedWord.style.background="white";
+		lastHighlightedWord = document.getElementById(idx);
+		lastHighlightedWord.style.background="gray";
+		
+		handleTabClick(tabID);
+		
+		jumpToId(tabID, idx);
+	}
+	</script>
+</head>
+
+<body id="Top" onload="onLoad()">
+
+<div id="content">
+	<p></p>
+	<div id="divSourceTabs">
+		<ul id="tablist">
+			<li><span id="tab1" onclick="handleTabClick(1)" class="current">Katarzyna Sowula</span></li>
+			<li><span id="tab2" onclick="handleTabClick(2)">Jana Beňová</span></li>
+			<li><span id="tab3" onclick="handleTabClick(3)">Krisztián Grecsó</span></li>
+			<li><span id="tab4" onclick="handleTabClick(4)">Magdaléna Platzová</span></li>
+			<li><span id="tab5" onclick="handleTabClick(5)">Taras Prochasko</span></li>
+			<li><span id="tab6" onclick="handleTabClick(6)">Valžyna Mort</span></li>
+			<li id="last">&nbsp;</li></ul>
+			<!-- MSIE BUG on the above line: if I put the closing </ul> tag on a new line, MSIE displays an extra white space
+			after the last </li>, which messes up the 'pixelperfect' right-padding of my menu aligned with right-padding of the
+			blocks inside the main content area.
+			To summarize: HOW on EARTH can WHITESPACE influence a valid XML document's interpretation???
+			-->
+	</div>
+	<div id="divSource1" class="DivSourceOn">
+		Auftrieb<br />
+		<br />
+		<span id="id68">Ich</span> stelle mich <span id="id57">auf</span> <span id="id113">die</span> Zehenspitzen, lehne mich aus dem Fenster, betrachte <span id="id135">die</span> <span id="id5">von</span> grünen Büschen gesäumte Weichsel <span id="id17">und</span> grinse breit, <span id="id138">denn</span> <span id="id32">nach</span> einer außergewöhnlichen <span id="id13">Nacht</span><br />
+		wie dieser habe ich immer <span id="id22">ein</span> unkontrolliertes Grinsen im Gesicht. Einen Augenblick später lasse ich mich wieder auf <span id="id53">den</span> unbequemen Plastiksitz <span id="id94">fallen</span>, einen <span id="id26">von</span> <span id="id33">der</span> Sorte, auf denen<br />
+		<span id="id8">man</span> <span id="id51">es</span> keine fünf Minuten aushält, sie formen sie immer so, dass <span id="id19">man</span> sich jedes Mal <span id="id145">die</span> Wirbelsäule an dem <span id="id128">gewölbten</span> Scheiß stößt, <span id="id147">der</span>, wozu <span id="id15">auch</span> immer, quer <span id="id52">über</span> <span id="id157">die</span> gesamte<br />
+		Lehne geht.<br />
+		Aus meinem Rucksack hole ich <span id="id115">eine</span> Flasche Apfelsaft <span id="id74">und</span> einen Vortrag <span id="id29">von</span> Frans B. M. de Waal, Bonobo: Sex and Society. Ich übersetze manchmal für meinen Bekannten, einen Anthropologen, <span id="id159">der</span> für so was nie <span id="id65">Zeit</span> <span id="id156">hat</span> <span id="id86">und</span> mir regelmäßig einige Seiten zuschiebt.<br />
+		Vom Cover glotzt mich <span id="id58">ein</span> <span id="id207">riesiger</span>, geschniegelter, intelligenter Menschenaffe <span id="id197">mit</span> adrettem Mittelscheitel an, <span id="id88">ein</span> Affe, <span id="id182">der</span> über achtundneunzig Prozent Homosapiens-Gene besitzt <span id="id91">und</span> <span id="id170">die</span> Schimpansen weit hinter sich gelassen hat, <span id="id93">und</span> das will was heißen. Obwohl er, <span id="id130">als</span> er 1929 von dem Deutschen Ernst Schwarz entdeckt wurde, irrtümlich Zwergschimpanse genannt worden war.<br />
+		<span id="id106">In</span> letzter <span id="id67">Zeit</span> habe ich <span id="id62">zu</span> nichts <span id="id177">mehr</span> Lust, <span id="id12">nur</span> <span id="id198">Schwelgen</span> im eigenen Glück, ich habe <span id="id223">nur</span> <span id="id224">noch</span> eins im Kopf, <span id="id14">aber</span> für <span id="id110">den</span> Anthropologen tue ich alles. Außerdem, je länger ich den<br />
+		Artikel übersetze, umso <span id="id181">mehr</span> fasziniert er mich.<br />
+		Die Bonobos regeln alles, auch die kleinsten Lappalien, mit Sex. <span id="id175">In</span> ihrem hervorragend organisierten Leben gibt <span id="id63">es</span> keinen Platz für Krieg, denn dort herrscht <span id="id126">ein</span> allmächtiges<br />
+		Matriarchat, <span id="id95">und</span> falls <span id="id132">es</span> einmal zu ungemütlich wird, organisieren die Weibchen <span id="id117">riesige</span> Orgien, ohne Unterteilung <span id="id219">in</span> Alterskategorien, nach denen niemand mehr <span id="id158">Kraft</span> für einen<br />
+		zerstörerischen Kampf hat.<br />
+		Ich hebe meinen Blick von den Unterlagen <span id="id97">und</span> schaue durchs Fenster auf die fetten Lettern <span id="id46">am</span> Eingang des Warschauer Zoos, die Hotdogbuden, die gepflegten Beete mit erlesenen<br />
+		<span id="id10">Blumenmustern</span> <span id="id104">und</span> die freundlichen Werbeplakate.<br />
+		BESUCHE UNSER SCHÖNES ELEFANTENHAUS – LERNE DIE GANZE ELEFANTENFAMILIE KENNEN: DEN LUSTIGEN LOTEK, DEN BESCHEIDENEN<br />
+		LEON, DEN EINGEBILDETEN FRYDERYK, DIE PUMMELIGE BUBA <span id="id120">UND</span> DIE SCHÜCHTERNE ZULA.<br />
+		<span id="id199">Dann</span> die Absperrungen aus Metall <span id="id122">und</span> das Freigehege beim Park Praski, im Klartext, einige Büsche, Steine <span id="id150">und</span> Beton, auf dem sich drei des Lebens überdrüssige Braunbären aalen,<br />
+		ÄUSSERST GEFÄHRLICHE TIERE! WIR BITTEN UM BESONDERE VORSICHT. „Die faulen Bären <span id="id9">schaut</span> <span id="id36">man</span> sich <span id="id48">am</span> besten aus <span id="id184">der</span> Straßenbahn an“, denn die Zoodirektion<br />
+		lässt sie als halblebendige Reklame durch das Gehege trotten, das nur durch einen Wassergraben vom Gehweg getrennt <span id="id64">ist</span>. So latschen sie schon über fünfzig Jahre herum, <span id="id153">und</span> <span id="id212">der</span> Großstadtgestank hat ihnen die Nasen schon bis über beide Ohren verdreht. Ich mag dieses Gehege, obwohl das Grabenwasser ziemlich versifft <span id="id140">ist</span>, voll von Paprikachips <span id="id161">und</span><br />
+		Papierfetzen, <span id="id168">und</span> <span id="id187">wenn</span> so <span id="id204">ein</span> europäischer Braunbär Ursus arctos arctos darin eintaucht, klebt gleich das ganze grasige Grün an ihm.<br />
+		„Guck mal, der Bär schwimmt!“<br />
+		„Ach was. Er suhlt sich im Wasser <span id="id179">und</span> verscheucht bloß die Enten.“<br />
+		Genau <span id="id70">hier</span> habe ich den Anthropologen kennengelernt. Er stand in der Zuschauermenge, an die Absperrung gelehnt, als einziger ohne Fotoapparat, Kind <span id="id193">und</span> schillernden Ballon. Er<br />
+		stand da <span id="id203">und</span> lauschte den mit Apfelhälften werfenden Jungs.<br />
+		„Was für Lahmärsche.“<br />
+		„Los, wir ärgern sie!“<br />
+		„Wer die Schnauze trifft, zehn Punkte, auf den Beton, fünf, ins Wasser, null!“<br />
+		Desmond Morris, <span id="id215">ein</span> Anthropologe, der Ende der Sechziger für reichlich Wirbel gesorgt hatte, indem er den Menschen als nackten Affen bezeichnet hatte, das weiß ich natürlich<br />
+		von meinem Anthropologen, hat in <span id="id107">einem</span> Buch geschrieben, ein intelligenter Bär könne mühelos das Zoopublikum dressieren. Kinder mögen Bären, die Bären haben keine Wahl. Lieber sterben sie an Überfütterung als an Langeweile. Obwohl sie eh nie die Elefantendame übertreffen werden, die sich an einem Tag außerplanmäßig eintausendsiebenhundertsechs<br />
+		Erdnüsse, eintausenddreihundertdreißig Bonbons, eintausendneunundachtzig Brotstücke, achthundertelf Kekse, einhundertachtundneunzig Orangenstücke, siebzehn Äpfel, sechzehn<br />
+		Papierfetzen, sieben Portionen Eis, einen Hamburger, einen Schnürsenkel <span id="id211">und</span> einen ledernen Damenhandschuh reingepfiffen hat. Das alles habe ich unter anderem damals erfahren,<br />
+		allerdings <span id="id11">nicht</span> mehr an der Metallabsperrung, sondern bei einem Irish Coffee in einer Bar in der Altstadt. Den Rest erfahre ich nach <span id="id221">und</span> nach aus Büchern, denn der Anthropologe<br />
+		hat <span id="id124">eine</span> Menge faszinierender Bücher, wohl alle von Morris, und dazu noch den Vorteil, dass er sie gerne verleiht. Ach, gibt <span id="id141">es</span> überhaupt etwas, das er <span id="id178">nicht</span> hat? Fehler vielleicht.<br />
+		<br />
+
+
+
+	</div>
+
+
+	<div id="divSource2" class="DivSourceOff">
+		Geleitplan<br />
+		<br />
+		Petržalka - Galapagos<br />
+		<span id="id173">Eine</span> wirkliche Stinkbombe. In der Wohnung neben Ian und Elza wohnt ein älterer Herr. Der denkt schon jahrelang, dass Elza Ians Sohn <span id="id144">ist</span>. Er grüßt sie munter mit Servus und boxt ihr mitunter freundschaftlich gegen den Brustkorb.<br />
+		Der Nachbar kann Stinkbomben <span id="id180">nicht</span> ausstehen. <span id="id194">Wenn</span> die Kinder wieder einmal welche abbrennen, <span id="id222">dann</span> <span id="id92">rennt</span> er auf den Balkon und brüllt: „<span id="id71">Du</span> Wichser!“ Immer wieder und immer wieder. So beginnt die vorweihnachtliche <span id="id142">Zeit</span> in Petržalka: Duwichserduwichserduwichserduwichserdu.<br />
+		Der Nachbar <span id="id172">ist</span> kein Mensch, er <span id="id69">ist</span> im Grunde genommen selbst <span id="id206">eine</span> Stinkbombe der besonderen Art. Ein Zündhütchen. Heute <span id="id16">Nacht</span> pilgert Elza zu seiner Wohnungstür, damit sie nicht durch die Wand hindurch eine Unterhaltungssendung im Fernsehen mit anhören muss. Sie bittet ihn, <span id="id186">doch</span> etwas leiser zu drehen. Seine Augen glänzen: eine Kombination aus Alkohol und Tränen. „Na, ich weiß ja nicht,“ antwortet er zunächst erhaben, voller positiver Energie. „Das <span id="id200">ist</span> ja eine Sendung zur Unterstützung der Tatra, und da habe ich gedacht, dass alle, dass ja jeder,“ fügt der Nachbar dann schon eher winselnd hinzu.<br />
+		Elza kehrt in ihre Wohnung zurück, der Fernseher jenseits der Wand röhrt nicht mehr. <span id="id139">Jetzt</span> röhrt der Nachbar. „Ungarische Huren!“ Immer wieder und immer wieder. Elza liegt im Bett und ihr <span id="id90">laufen</span> die Tränen. Immer wieder. Zur Unterstützung Petržalkas.<br />
+		<br />
+		Petržalka ist ein Landstrich, <span id="id7">wo</span> <span id="id146">Zeit</span> keine Rolle spielt. Hier leben Wesen, von denen der übrige Teil der Weltbevölkerung denkt, dass sie gar nicht mehr existieren, dass sie längst ausgestorben sind. Die guten und auch die bösen. Die Gesichter der Kakerlaken hier erinnern an Dinosaurier, die <span id="id155">Stimme</span> des Nachbarn kommt nicht aus seinem Hals, sondern unter den Fangzähnen eines Raubtieres hervor.<br />
+		Elza rennt auf den Balkon, fischt eine Flasche aus dem Abfalleimer und beugt sich zum Nachbarn hinüber. An der Wand steht ein leeres Aquarium. Sie wirft die Flasche mitten hinein und läuft schnell wieder <span id="id183">weg</span> um sich im Bett zu verstecken. Sie hört, wie der Nachbar auf den Balkon kommt, eine Weile ist <span id="id143">es</span> still. Elza zittert.<br />
+		„Blauer Portugieser“, entziffert der verwunderte Nachbar schließlich aus den Scherben. Dann senkt sich Frieden übers Land.<br />
+		<br />
+		Kalisto Tanzi<br />
+		Elza: Wir hatten gemeinsam Weintrauben gegessen und dazu Roséwein getrunken. Am nächsten Tag fand ich in meiner Jackentasche einen noch feuchten Weinbeerstrunk. Er sah aus wie ein gerupfter Weinachtsbaum.<br />
+		Kalisto Tanzi verschwand aus der Stadt, die von einer Hitzewelle heimgesucht worden war. Die Hitze schlug einem von den Häusern und <span id="id171">Straßen</span> direkt ins Gesicht, und die glühende Stadt prägte sich den Leuten auf die Stirn wie ein Siegel.<br />
+		Ich blieb vor dem Theaterschaukasten stehen, um auf den Plakaten Kalistos Namen zu lesen und mir selbst noch einmal zu bestätigen, dass er <span id="id66">wirklich</span> existierte. Ich genieße es, diesen Namen auszusprechen, der für Kalisto seine ganze Kindheit und Pubertät hindurch eine Qual gewesen war, und diese hatte erst mit meiner Ankunft ein Ende gefunden. Ich laufe langsam ans andere Ende der Stadt, meine Beinmuskeln zittern ein wenig in der heißen Luft. Es ist Mittag. Das Einzige, was sich auf diesem <span id="id137">Planeten</span> wirklich bewegt, sind die Schweißtropfen. Sie rinnen die Stirn hinunter zur Nasenwurzel und dann quellen wieder neue unter den Haaren hervor.<br />
+		Ich will Gift kaufen.<br />
+		Ian hat gestern im Klo eine Ratte gesehen.<br />
+		Der Kammerjäger hat unter seinem Laden einen Keller mit Wein. In diesem Keller entfliehen wir gemeinsam der unerträglichen Hitze, wir trinken ein Gläschen. Er erzählt mir, wie intelligent Ratten doch seien.<br />
+		„Sie haben einen Verkoster, der probiert zuerst die Nahrung. Wenn der verreckt, dann rühren die anderen den Köder gar nicht erst an. Deshalb bieten wir nun schon Köder der zweiten Generation an. Die Ratte stirbt erst vier <span id="id149">Tage</span> nach Verzehr des Gifts. Sie stirbt an den Folgen einer inneren Verblutung. Schon Seneca hat behauptet, dass solch ein Tod schmerzfrei sei. Und überhaupt – wenn mehrere von ihnen binnen so kurzer Zeit sterben, halten die Ratten den Ort angesichts der hohen Sterblichkeitsrate für ungeeignet, und sie ziehen woandershin. Dieses Einschätzungsvermögen fehlt einigen Leuten und sogar ganzen Völkern völlig.“<br />
+		Eine perfekte ekelhafte Welt. Ich lächle über den Roten Traminer hinweg. Der Kammerjäger spricht sehr schnell. Sein Gesicht ist ständig in Bewegung. Als ob er zu viele Gesichtsmuskeln hätte. Als ob ihm unter der Haut pausenlos ein Schwarm von Nagetieren hin- und herlaufen würde. Von einem Ohr zum anderen. Vom Kinn hinauf zur Stirn und wieder zurück. Ich spüre, wie ihm unter dem Tisch unruhig die Beine pendeln, und sein ganzer Rumpf wiegt sich dazu wie im Tanz.<br />
+		Mir wird bei diesem Anblick übel. Mein Kopf dreht sich wie bei einem Film mit zu schnell aufeinanderfolgenden Bildern. Der Kammerjäger beugt sich zu mir herüber und wuschelt mir durch die Haare.<br />
+		„Sie sind so ein süßes Mäuschen“, lächelt er mir zu. Ich lächle zurück. Ich spüre, dass ich nach Einsamkeit rieche.<br />
+		Er begleitet mich hinaus und gibt mir eine Plastiktüte voller Schädlingsbekämpfungsmittel mit auf den <span id="id214">Weg</span>. Anstelle von <span id="id0">Blumen</span>. Ich halte sie fest umklammert und stolz in der Hand. Vielleicht wird das nun immer so sein, denke ich. Wenn mir Männer den Hof machen wollen, schenken sie mir anstelle von <span id="id2">Blumen</span> eine Tüte mit Schädlingsbekämpfungsmitteln der zweiten Generation.<br />
+		Als ich aus dem kühlen Keller steige, schlägt mir die heiße Luft und eine Welt ohne Kalisto Tanzi direkt ins Gesicht.<br />
+		<br />
+		Kalisto hatte ich bei einer Vernissage das erste Mal gesehen. Dort wurde viel getrunken, und im Laufe des Abends bildeten sich einige neue Paare. Wie Ian sagt – wenn Männer, Frauen und Alkohol zusammenkommen... – und er verweist damit auf die Grundkoordinaten zur Ortung von Sex.<br />
+		Ich hatte in Kalistos blaue Augen geschaut und mich das erste Mal nach einem Wesen mit farbigen Augen gesehnt. Ian hat fast schwarze Augen. Farben waren für mich immer schon entscheidend, und es war deren Kombination in Kalistos Gesicht, was mich zu ihm hingezogen hatte. Wir haben dann bis zum nächsten Morgen beieinandergesessen und uns unterhalten. Wie das am Anfang immer so ist: <span id="id39">man</span> kann sein ganzes Leben noch einmal neu erzählen und alles ist erwähnenswert. <span id="id78">Man</span> erzählt und dreht sich langsam um sich selbst – <span id="id81">man</span> <span id="id75">tanzt</span> und mit einem der ganze Raum – ein feiner flimmernder Staub fängt sich einem in den Haaren.<br />
+		In Kalisto Tanzis Gegenwart lebte mein Erzählen regelrecht auf. Mein eigenes Leben schwamm wie ein gläserner Berg vor unseren Augen. Mit jedem Wort kreierte ich es neu. Ich erholte mich. Ja, in Kalisto Tanzis Gegenwart habe ich mich erholt. Darüber ließe sich bestimmt ein Buch schreiben. Was wäre das für ein Musical: Ach, liebe Fee, wenn <span id="id131">du</span> wüsstest, was ich alles erlebt habe...<br />
+		Doch wir haben nun Mittag. Ich sitze in einem Café. <span id="id42">Ganz</span> in Braun <span id="id218">gekleidet</span>: eine alte Frau. Ich sitze Ian gegenüber. Ein altes Paar. Die <span id="id225">Stille</span> zwischen uns wird nur durch die Schlagzeilen der Zeitung unterbrochen. Ian verlautbart sie mir hier und da über den Tisch hinweg. Und dann liest er <span id="id127">weiter</span>. Die Zeitung ist wie eine Zugbrücke. Von Zeit zu Zeit klappt Ian sie herunter und <span id="id100">blickt</span> mir ins Gesicht. Unsere Augen begegnen sich nicht. Der Wein schmeckt nach getrockneten Pflaumen und Schokolade. Die Aufschrift Coca Cola auf dem Tischtuch hebt sich langsam und nahezu unauffällig meinem Gesicht entgegen. Ich beschwere das Tuch mit einem Tellerchen. Ich habe es gern, wenn alles auf seinem Fleck bleibt.<br />
+		Zu Hause dann sitze ich am Tisch und schreibe Kalisto einen Brief. Ian <span id="id101">blickt</span> mir über die Schulter – Ach, solch einen langen Brief musst <span id="id151">du</span> schreiben, <span id="id163">du</span> Arme? Würde nicht eine SMS reichen? Zum Beispiel: <span id="id18">Wo</span> <span id="id72">bist</span> <span id="id166">du</span>? <br />
+		<br />
+
+
+
+	</div>
+
+
+	<div id="divSource3" class="DivSourceOff">
+		<span id="id136">Tanzschule</span><br />
+		An diesem ersten, wirklich heiklen Sommernachmittag, als József Voith, genannt Jocó, Jurastudent im <span id="id148">letzten</span> Jahr, zum ersten Mal von seinem Onkel enttäuscht wurde, betrachtete dieser gerade verzagt die Pflaumenbäume, auf denen die Schmetterlingszikaden eine Feier veranstalteten. Der milchweiße Faden hatte die versteckten Winkel zwischen den Blättern fast gänzlich zugesponnen, alles war schaumbedeckt, die Baumkrone trug ein klebriges Seidenkleid. Mit Spitzenkragen, sagte Jocós Mutter, Hanna Voith, dabei war das eine ernste Angelegenheit, die Pflaume ist eine Frucht Gottes, ein Geschenk des Schöpfers und Schnapsbrennen ist kein Spiel, das Leben ist ein Spiel, aber doch nicht der Obstgeist, der Pflaumenschnaps der Tiefebene ist der Treibstoff der ungarischen Seele, ohne Pflaumenschnaps gibt es in dieser Gegend weder Liebe, noch Verbundenheit, die Tiefebene ohne Schnaps ist wie das Mátra-<span id="id85">Gebirge</span> ohne Panorama. Der Schnaps ist unser Horizont, unsere Perspektive, unser Zukunftsbild, sagte Jocós Onkel, Lajos Szalma, Biologie- und Sportlehrer, manchmal und leckte dabei seinen Mundwinkel, eine Geste, die nicht gerade dezent andeutete, dass er nichts dagegen hätte, einen Doppelten zu trinken.  Es war ein heißer Sommer in Feketeváros, der Treibsand im Garten von Jocós Familie glühte selbst am späten Nachmittag noch, Onkel Lajos war gleich nach seiner Ankunft auf Jocós Zukunft zu sprechen gekommen und hielt an dem Thema fest; es ging an diesem ersten, wirklich heiklen Sommernachmittag darum, wie schwierig er, der Jurastudent József Voith, es haben würde, eine Arbeitsstelle zu finden, es seien schließlich nur noch zwei Semester und der baldige Eigentümer eines Doktortitels habe noch keinerlei Zukunftspläne. Der überraschend engagierte Lajos Szalma versuchte, seinen Neffen zu motivieren, indem er ihm versicherte, ihm in Tótváros durch seine Verbindungen eine Stelle als Referendar besorgen zu können, doch Jocó empfand die <span id="id118">Wahlheimat</span> seines Onkels als einen lächerlichen Ort, ein Kuhdorf in einer versteckten Ecke der Tiefebene. Jocó wäre gerne in Szeged geblieben, in der Stadt der Universität, der <span id="id220">Sonne</span>, der strahlenden Promenaden, <span id="id35">wo</span> die Theiß das Stadtufer schaumig schlägt und es dem selbstbewussten Bürger vergönnt ist, in den Fußstapfen von Nobelpreisträgern zu schreiten.<br />
+		Lajos Szalma schüttelte den Kopf, nein, <span id="id99">man</span> kann nicht so wählerisch sein, Jocó könne sich freuen, wenn er nicht arbeitslos werde; doch währenddessen spürte er wohl bereits, dass Zeit und Not große Herren sind und immer größere werden, diese Schlacht war schon gewonnen – also widmete er sich wieder den Pflaumenbäumen. Er beschloss, sie zu spritzen, dabei wusste er, dass Jocós Vater, Károly Voith, es hasste, wenn der Bruder seiner Frau sich so aufführte, als sei er der Herr des Hauses, jetzt kümmerte er sich jedoch nicht darum, schließlich war Károly gerade bei der Arbeit, also rührte er in einem Emailletopf Basudin und diverse andere Gifte an, ließ das Spritzmittel in das alte Handspritzgerät laufen, in den gelben Rucksack, wie Jocós Mutter es nannte, setzte sich eine Mütze auf und machte sich an die Arbeit. Es wehte ein leichter <span id="id205">Wind</span> in Feketeváros an diesem ersten, wirklich heiklen Sommernachmittag, ganz sanft, ohne Hast, als sei ihm alles gleich, als liebte er das <span id="id55">Rauschen</span> der Auewälder ebenso wie die Stille, als streichelte er die lieblichen Weizenfelder der Goldinsel, erwarte dafür jedoch keine Verneigung von ihnen. Lajos Szalma drückte den Hebel. Noch einmal. Dann wartete er darauf, dass sich im Behälter der Luftdruck aufbaute.<br />
+		Und da hörte er sie. Zumindest erzählte er es später so, denn der Ausgangspunkt der Schwierigkeiten an diesem ersten, wirklich heiklen Nachmittag war ja gerade, dass nach Jocós Ansicht überhaupt nichts geschehen war. Diese Meinung unterschied sich von der Lajos Szalmas grundlegend, so dass keine einvernehmliche Aussage getroffen werden konnte. Lajos Szalma, anerkannter Sportlehrer in Tótváros, hatte den Hebel des Spritzgerätes gedrückt und sie gehört. Für einen kurzen Augenblick hatte er gedacht, sie käme von woandersher, doch bald bemerkte er, dass nichts zu <span id="id196">hören</span> war, ja, alles war still, wenn er nicht pumpte. Die Musik verstummte. Der honigsüße, rauchige Walzer tönte nur dann, wenn er spritzte. Er <span id="id164">blickte</span> ins Haus, auf die Terrasse, <span id="id77">wo</span> sich Jocó und seine Mutter im Schatten der Lebensbäume ausruhten, dann in den Garten, um festzustellen, ob noch jemand anderem aufgefallen war, dass aus seinem gelben Rucksack eine Musikbox geworden war, doch die ganze <span id="id125">Straße</span> hielt Siesta, die Gärten schlummerten, die Sonnenliegen und sogar die über dem Asphalt vibrierende heiße Luft waren eingenickt – obgleich sich sein geliebter Neffe nur wenige Meter von ihm entfernt unterhielt, gab es also keine Zeugen für die Verwandlung des Spritzgerätes in einen Leierkasten. Später erzählte Lajos Szalma, er habe gepumpt und der Walzer sei angeschwollen, als hätten ihn junge Roma mit glänzenden Gesichtern in den Weinlauben der Margit-Insel oder auf einer übers Wasser ragenden Terrasse am Theiß-Ufer von Feketeváros gespielt und auch er habe die Melodie mitgesummt, weswegen es vollkommen ausgeschlossen sei, dass Jocó überhaupt nichts gehört habe, ihm sei langsam, stockend auch der Text der einen oder anderen Zeile eingefallen und auch wann er diese Musik zum letzten Mal gehört habe... Er war damals so alt gewesen wie Jocó jetzt und hatte mit seiner bezaubernden Geliebten in einem Badehotel in Orosháza ein Zimmer genommen; auf der einen Seite führte ein schilfbewachsener Pfad zum Hotel, auf der anderen schlängelte sich ein Weg unter einem Weidentunnel entlang und aus dem Zimmerfenster sah <span id="id102">man</span> nur einen Nussbaum, dessen dürren, grimmigen Stamm und das Schilf, das unheimlich rauschende Schilf des Badedorfes, in der Gaststätte sprachen die Kellner rumänisch und der junge Lajos brachte seiner Geliebten Strudel und Rotwein aufs Zimmer und die Frau lag nackt im Purpurlicht, zusammengerollt, auf der Birnenlinie ihres Gesäßes spielte das Laub des Nussbaums sein Schattenspiel... und da ertönte von irgendwoher aus der Puszta dieser Walzer, den jetzt das Spritzgerät spielte.<br />
+		Onkel Lajos behauptete, nun das Tempo gesteigert zu haben, er pumpte immer schneller, woraufhin sich der Walzer verflüchtigte und an seine Stelle ein hastiger, nervöser Tango trat, eine scharfe, aufgeregte Musik... es war unmöglich, dies zu überhören, aber es war nichts zu machen, auch Hanna Voith hatte es nicht gehört, dabei sah Onkel Lajos zu dem Zeitpunkt sogar schon die kleine muffige Kammer vor sich, in der er sich mit einer anderen Geliebten vor der Welt versteckt hatte, die Pension Cola, von deren Terrasse aus sie auf einen alten, geschlossenen Friedhof <span id="id165">blickten</span> und <span id="id98">wo</span> sie nackt rauchten, gestreift von den Scheinwerfern der vorbeifahrenden Autos, Suchlichter, die sich in Richtung Budapest entfernten und dabei diesen illegitimen Bund beleuchteten, der junge Lajos zündete sich eine Zigarette nach der anderen an, irgendwo in der Nachbarschaft wurde das Radio angeschaltet und es ertönte dieser Tango. <br />
+		Onkel Lajos’ Hand verkrampfte, er hatte die dem Haus zugewandte Seite des Pflaumenbaumes so sehr besprüht, dass die stinkende Giftlösung herunter rann, also ging er in eine andere Ecke des Gartens und pumpte etwas ruhiger weiter. Der Spritzleierkasten stimmte ein würziges ungarisches Lied über eine Kaserne und traurige Mädchen an, die ihre Geliebten nur noch auf dem Friedhof besuchen können. Lajos Szalma sang und dachte daran, wie lange er dieses Lied nicht mehr gesummt hatte, zum letzten Mal, als er in seiner Jugend kein Geld hatte, um sich ein Zimmer am Theiß-Ufer zu nehmen und im Camping Europa an der Körös-Mündung auch kein Platz mehr frei war, so dass er bei einer ehemaligen Geliebten, die sich gerade in einem schwülen Zimmer der Möbelfabrik-Ferienanlage aufhielt, Unterschlupf suchte. Die von ihm verlassene Frau schlief mit ihrem neuen Verehrer auf einem Doppelbett, aus dem Dunkel des kleinen, mückenreichen Zimmers waren weitere Schlafgeräusche zu hören. Der junge Lajos legte sich aufs Bett, wartete zunächst ängstlich, wurde dann jedoch immer mutiger... da hatte er zum letzten Mal innerlich dieses Lied gesummt: Auf einem Hügel in Klausenburg steht eine Kaserne... und er wusste auch nicht, warum ihm das damals eingefallen war, vielleicht, weil der vom Körös her <span id="id192">stark</span> wehende <span id="id210">Wind</span> die Fensterläden so wütend auf und zu schlug und dem jungen Lajos vor Angst die Hand zitterte, als diese sich ihren Weg unter die Decke seiner früheren Geliebten bahnte und es ihm den <span id="id208">Atem</span> verschlug, als das Nachthemd zuvorkommend zur Seite rutschte. Der junge Lajos war im Lied gerade an der Stelle Ach, wie viele Mädchen trauern um ihren Liebsten... angekommen und das konnte kein Zufall sein, denn genau in diesem Moment schöpfte der neue Verehrer Verdacht, das kaum hörbare Keuchen, die knisternde Luft trieben ihm den Schlaf aus den Augen... Um den jungen Lajos trauerte niemand, als er die harte Treppe der Möbelfabrik-Ferienanlage hinunterrollte.<br />
+		Jocó und seine Mutter bemerkten erst dann, dass irgendetwas nicht in Ordnung war, als Lajos Szalma bereits ganz laut, aus voller Kehle brüllte, er pumpte das in eine Drehorgel verwandelte Spritzgerät, die Kurbel drehte sich und nach seiner Behauptung war plötzlich Mozart zu hören, es waren die mit tödlicher Disziplin einsetzenden Instrumente des Requiems, die hier zum Leben erwachten, Jocós Mutter erkundigte sich von der Terrasse aus, was denn das für ein Gegröhle sei, Jocó rannte zu ihm und fragte, warum Onkel Lajos denn so erbost die Wand des Nachbarhauses bespritzte, Lajos Szalma hörte jedoch nichts, denn wie er später sagte, habe wohl Wolfgangs Musik das Jammern seiner phantasielosen Verwandten unterdrückt und er habe nur die ihm entgegenschwellende Vergangenheit wahrgenommen, die schwache, so leicht in Vergessenheit geratende Zeit... 
+
+	</div>
+	
+	
+	<div id="divSource4" class="DivSourceOff">
+		<span id="id1">Aarons</span> Sprung<br />
+		<br />
+		Sie sitzt auf dem Boden vor dem Schrank, in dem sie Briefe, <span id="id41">Fotos</span> und Zeugnisse aufbewahrt, Zeitungsartikel, Einladungen, <span id="id40">getrocknete</span> <span id="id3">Blumen</span> und verblichene Trikoloren; Andenken an die Gründung der Republik, die Erstkommunion, den Matura-Ball, die Befreiung, die Hochzeit, die Geburt ihres Sohnes, die Beerdigung der Eltern, die Hochzeit ihres Sohnes, die Geburt ihrer Enkelin Milena, die Samtene Revolution, die ersten freien Wahlen; an ihre Ausstellungen.<br />
+		Sie blättert Briefe durch, liest einen nach dem anderen und legt einige davon beiseite, um sie später zu vernichten. Und überlegt, wie. Verbrennen kommt ihr pathetisch vor, sie hat auch keinen <span id="id109">Ofen</span>. Einfach nur wegwerfen geht ebenfalls nicht, sie erträgt die Vorstellung nicht, die Briefe könnten plötzlich im Container obenauf liegen oder sogar auf dem Trottoir im Schmutz, und jemand, der seinen Mülleimer leeren kommt, könnte sie mit seinen Blicken streifen. Zerreißen kann sie sie auch nicht. Vielleicht ertränken, wie kleine Kätzchen und unglückliche Liebende. Mit einem Stein beschweren, das Papier weicht durch, die Tinte verläuft, wird Wasser, schmutziges Flusswasser, und <span id="id96">fließt</span> ab, ins <span id="id25">Meer</span>. Ihr wird bewusst, dass sie angesichts ihrer Briefe sentimental bleibt. Auch deshalb vernichtet sie sie. Und auch, um demjenigen, der ihren Nachlass durchgehen wird, falls jemand sich die Mühe machen sollte, ganz so zu erscheinen, wie sie es will. Eine Frau, die ihr Leben von allem Überflüssigen befreit hat und ganz <span id="id43">Auge</span> geworden ist, rein und klar wie ihre Aquarelle.<br />
+		Auch einige von Bertas Tagebüchern legt sie beiseite. Milena, ihre Enkelin, möchte sie lesen, wenn sie Zeit hat.<br />
+		Zeit hat Milena fast nie. Die alte Frau <span id="id20">schaut</span> sie morgens an und <span id="id79">sieht</span> die Ringe unter ihren Augen, ihre Unzufriedenheit, etwas nagt an ihr, sagt sie sich, deshalb ist sie nachts so oft unterwegs. Sie <span id="id80">sieht</span> an ihr die <span id="id174">Unruhe</span> ihrer eigenen Jugendzeit, die eigene Sehnsucht, die sich mit den Jahren auswächst und am <span id="id47">Alltäglichen</span> <span id="id45">erstickt</span>. Sie beobachtet die Enkelin, raucht die erste ihrer täglichen fünf Zigaretten und denkt über die Kunst nach. Kristýna Hládková, 88, denkt über die Kunst nach. Und über sich selbst.<br />
+		Müde ist sie. Sie wirft die Briefe, die noch nicht sortiert sind, in die Schachteln zurück und schließt sie im Schrank ein.<br />
+		Am <span id="id49">Abend</span> <span id="id50">stürmt</span> es, außerhalb Prags soll es sogar ein <span id="id108">Orkan</span> sein. Kristýna sitzt auf dem Sofa gegenüber dem Fenster und <span id="id37">schaut</span> auf die <span id="id83">schwankenden</span>, feinen <span id="id84">Gestalten</span> der Tannen und Silberfichten und die langen Äste der Birken. Der Blick aus dem Fenster wirkt wie ein Gemälde, auf dem das herabwallende Haar der Birken in den aufgelösten Zopf einer halbnackten Nymphe übergehen, in immer gleichen Arabesken. Das Art déco in seiner ganzen Falschheit und Unreinheit erträgt sie noch heute nicht, dabei hätte die Abscheu aus der Jugendzeit doch schon abstumpfen können unter einer Schicht von Altersnostalgie. Sie bleibt sich treu und es tut ihr nicht Leid um die Stuckbüsten und die <span id="id27">Blüten</span>, die sie mit dem Hammer von den Wänden ihrer Wohnung abgeschlagen hat. Der Sohn hatte ihr das übel genommen. Aber hätte sie diesen Zierrat denn ertragen können? Sie, die seinerzeit für Kirchner, Nolde und Marc gebrannt hat, und für Chagall, der wie eine <span id="id116">Offenbarung</span> gewesen war? Für Le Corbusier und Brancusi? Die Schülerin des Malers K., in dessen Atelier sie Berta kennen gelernt hat und durch diese noch eine weitere große Liebe, Paul Klee.<br />
+		Berta, meine große Freundin und lebenslange <span id="id119">Inspiration</span>. So wird sie es dem Filmteam erzählen, das aus Israel angereist ist, nur um einen Film über Berta zu drehen. <br />
+		Berta, wird sie ihnen sagen, war in der Lage, den <span id="id111">Dingen</span> Leben <span id="id112">einzuhauchen</span>. Das ist Kunst. <span id="id202">Tote</span> auferstehen zu lassen, unsere Wahrnehmung zu schärfen für etwas, woran wir bisher achtlos vorbeigegangen sind. Ein Stück von einem schönen Vorhang konnte sie genauso begeistern wie ein Bild. Mir waren Vorhänge immer eher gleichgültig.<br />
+		Diese Leidenschaft für alles ringsum lenkte sie aber von der eigentlichen Arbeit ab oder von dem, was man so allgemein dafür hält. Sie hat nicht viele Bilder hinterlassen. Ihre Beziehungen behandelte sie ebenso wie die Interieurs, sie wollte aufrichtig leben, jenseits aller Klischees, bequemen Lügen und <span id="id169">Selbsttäuschungen</span>. Reinheit, Wahrhaftigkeit und Freiheit, das waren wohl die Forderungen von Bertas ganzer Generation.<br />
+		Auch ich hinterlasse ja eigentlich kaum mehr als eine kleine persönliche Spur. Sie haben kein großes Talent,, sagte mein Lehrer, der Maler K., aber ein schönes. Mit Berta war es allerdings schwieriger, sie hatte das große Talent. Wann immer Kristýna von Berta spricht, muss sie auch von sich selbst sprechen, und umgekehrt.<br />
+		Und doch hatte Kristýna nach gängigen Maßstäben im Vergleich zu Berta Erfolg gehabt. Nach dem <span id="id167">Systemwandel</span> 1989 hatte sie einige Jahre öffentliche Aufmerksamkeit genossen: Ausstellungen ihres Gesamtwerks, Preise, Auslandsreisen. Journalisten waren gekommen, hatten sie zur unmittelbaren Vergangenheit befragt und sich über das Unrecht verwundert, das ihr widerfahren war, sie hatten darüber die Köpfe geschüttelt, und Kristýna hatte dabei ein zwiespältiges Gefühl gehabt: <span id="id162">Wo</span> war sie all die vierzig Jahre gewesen? Saß sie denn nicht immer noch in der gleichen Wohnung? Und wenn sie also hier war und nicht auf einem anderen, absurden <span id="id185">Planeten</span>, wo hatten dann diese Leute gelebt, die jetzt kamen, um sie auszufragen? Mitte der Neunzigerjahre erschien eine Monographie, und danach verklang das Interesse genauso schnell, wie es aufgekommen war. Kristýna kehrte in die Einsamkeit zurück und schuf weiter, sie glaubte sogar, dass es ihr in den letzten Jahren vergönnt war, schärfer zu sehen und tiefer zu blicken als bisher. Sie experimentierte mit Gräsern, Baurinde und der Wasseroberfläche und näherte sich der <span id="id34">Natur</span> so weit an, dass diese sich auf dem Papier in reine Andeutungen auflöste, in luftige Ahnungen und flüchtige Abdrücke. Fast fünfzig Jahre älter als Berta, endete sie dort, wo auch diese aufgehört hatte. Sie würde ihre Freundin also nicht mehr übertreffen.<br />
+		Nach gängigen Maßstäben war Berta Altmann, deren Name in Kompendien und kunsthistorischen Abhandlungen nicht vorkam und nur wenigen Fachleuten für das Ghetto Theresienstadt bekannt war, keine große Künstlerin gewesen. Im persönlichen Maßstab aber war sie <span id="id209">riesengroß</span>. Noch heute gibt Berta, obwohl sie <span id="id73">tot</span> ist, Kristýna mehr Kraft als alle Lebenden um sie herum zusammengenommen.<br />
+		Kristýna <span id="id38">schaut</span> auf die schwankenden Gestalten der <span id="id87">Bäume</span> und hat das Gefühl, im Gebirge zu sein, an der feuchten, frischen, sauerstoffreichen Luft, in einem Wald, der über den <span id="id54">Hängen</span> <span id="id21">rauscht</span> wie eine <span id="id30">vierspurige</span> <span id="id31">Autobahn</span>. Sie kann es ganz genau ausmachen, es ist <span id="id114">Nacht</span>, und ein Mensch, ein junger Mensch stapft, einen Rucksack auf den Schultern, durch den <span id="id56">Schnee</span>, auf ein <span id="id59">warmes</span>, <span id="id60">erreichbares</span> <span id="id61">Ziel</span> zu, das er ab und an vergisst, und er wäre froh, wenn die Reise ewig dauern würde, <span id="id121">offen</span>, nächtlich, <span id="id123">windig</span>. Eines ihrer Bilder hat sie Der <span id="id213">offene</span> Weg genannt. Darauf ist unter einem weit gewölbten <span id="id129">Himmel</span> ein <span id="id23">leuchtendes</span>, <span id="id24">pulsierendes</span> Ei zu sehen, das mit einem Netz von Adern überzogenen ist.<br />
+		Die kleine Gestalt mit dem Segeltuchrucksack auf dem Rücken, die durch den Schnee vor ihr herstapft und von Zeit zu Zeit anhält, um die winterlichen Sterne zu bewundern, ist Berta. Sie fehlt ihr. Der Schmerz nutzt sich ab, aber die Leere nicht.<br />
+		<br />
+		Ich stehe am Fenster meiner Prager Wohnung, schaue hinaus: hinunter auf die Gleise und ein kleines Bahnhofshäuschen. Auf der Staffelei eine gerahmte Leinwand. Ich male. Wenn die anderen aus der Schule mich sehen könnten, sie würden mich auslachen. Ihren Augen nicht trauen. Schließlich haben wir die Staffeleien verbrannt! Wir wollten nie „nach der Natur“. Wir wollten nicht lügen. Aus dem Fenster! Ich stehe in meinem Wohnzimmer und male, was ich sehe. Ich werde zu den Gleisen, dem Bahnhof, dem leicht rötlichen Abglanz auf dem Dach des Hauses gegenüber. Ich wandere. Ich höre auf, eine bedrückte, belastete Frau zu sein. So ist mir leicht. Nicht nach innen will ich schauen, sondern nach außen.<br />
+		<br />
+
+	</div>
+
+
+	<div id="divSource5" class="DivSourceOff">
+		Taras Prochasko (Ukraine)<br />
+		Daraus lassen sich ein paar Geschichten machen<br />
+		<br />
+		Das Spiel hieß „Wie Gott lenkt“. Auf unserem Berg gab es viele wilde Kirschbäume. Wir zogen von einem Kirschbaum zum nächsten, die Bäume waren für uns das, was für die Boheme bestimmte Kaffeehäuser und Bars waren. Wir saßen auf den Ästen, kletterten von Ast zu Ast, schaukelten in den Baumkronen, probierten die Kirschen, bewarfen einander mit Kernen. Den Mädchen, die nicht auf Bäume klettern konnten, reichten wir Zweige mit den besten Kirschen hinunter. Solche Zweige dienten auch als Sträuße und Geschenke. Genauso <br />
+		<br />
+		wie Walderdbeeren, auf einen Grashalm gefädelt. Die meisten Walderdbeeren wuchsen am Bahndamm. Auf den Schienen zu gehen war für uns wie promenieren. Ohne auch nur einmal von den Schienen zu steigen, spazierten wir bis zur Sperrzone vor der Brücke. Die Brücke wurde bewacht. Auf der anderen Seite der Brücke befand sich die Haltestelle des Regionalzuges. Die bewaffneten Wachposten ließen mich über die Brücke gehen, wenn ich mit dem <span id="id89">Abendzug</span> aus Iwano-Frankiwsk kam und zwei kleine Kinder auf dem Arm hatte, die schon schliefen. An einem nebeligen Morgen <br />
+		<br />
+		liefen Marjana und ich über die Brücke, um den Zug nicht zu verpassen. Wir sahen keinen Wachposten und konnten niemanden um Erlaubnis bitten. Als wir schon halb über die Brücke waren, tauchte hinter uns ein Wachposten auf, den wir nicht kannten. Er richtete das Maschienengewehr auf uns und befahl, die Brücke schleunigst zu verlassen. Wir beschlossen, daß es besser sei, erschossen zu werden, als aus dieser Höhe zu springen, und gingen, ohne uns umzusehen, auf die andere Seite. Einer der Posten unserer Division wurde mit einer kleinkalibrigen Waffe erschossen, <br />
+		<br />
+		nur weil man auf sein Maschinengewehr scharf gewesen war. In der Stadt wurde der Ausnahmezustand verhängt. An allen Stadtausfahrten standen unsere BTRs, ein Militärlaster versorgte die Soldaten mit Frühstück, Mittagessen und Abendessen. Am Ende wurden die Mörder in ingerdwelchen Gärten am Stadtrand ausfindig gemacht, und die Infanterie veranstaltete, nachdem sie die Mörder in die Enge getrieben hatte, eine regelrechte Treibjagd. Als ich auf einem Parkplatz mit eingemotteten gepanzerten Zugmaschinen Wache schieben musste, kam ein verletzter Storch <br />
+		<br />
+		zu unserem Posten geflogen. Wir nahmen ihn mit ins Wachhäuschen, wärmten und fütterten ihn, bis er ein paar Tage später weiterfliegen konnte. Aus der Nähe sah er kleiner aus als am Himmel. Die Abschiedsfeder des Storches steckte in meinem Truppenausweis, bis sie von Parasiten zerfressen wurde. Unsere Truppenausweise verbrannten wir während der Studentenrevolte. Die Protestbewegung der Studenten begann damit, daß wir uns – als wir achtundachtzig, nach zwei Jahren Wehrdienst,  an die Universität zurückkehrten – weigerten, Lehrveranstaltungen am<br />
+		<br />
+		Militärlehrstuhl der Universität zu besuchen. Und so sind wir keine Offiziere geworden. Onkel Wlodko rief Vater in Iwano-Frankiwsk an, damit er mich davon abbrachte, die militärische Ausbildung zu verweigern. Falls es irgendwelche Unruhen gibt, sagte er, und Taras umkommt, kriegt die Familie eine viel höhere Pension, wenn er als Offizier stirbt. Einmal sprachen mein Vater und ich nachts darüber, und Vater räumte ein, daß nun die Zeit meiner Generation und meiner Entscheidung gekommen sei. Wenn <span id="id188">du</span> es für notwendig hältst, <span id="id134">kannst</span> <span id="id191">du</span> auch ins Gefängnis gehen, <br />
+		<br />
+		brachte Vater es unsentimental auf den Punkt. An diesen nächtlichen Gesprächen, bei denen wir unsere Meinungen zu den wichtigsten Themen austauschten, störte mich am meisten, daß Vater eine Zigarette nach der anderen rauchte, was ich mir in seiner Gegenwart nicht erlauben konnte. Damals gab er mir eine Stange echter Marlboro, die er aus Amerika bekommen hatte. Während einer nächtlichen Autofahrt gemeinsam mit Vater zu rauchen, das wird für immer einer meiner wenigen unerfüllten <span id="id176">Träume</span> bleiben. Und das, obwohl ich Zigaretten in meiner frühen Kindheit <br />
+		<br />
+		gerade deswegen haßte, weil Vater im <span id="id44">Auto</span> rauchte. Zum letzten Mal rauchte Vater bei seinem vorletzten Krankenhausaufenthalt, einfach im Zimmer; dabei <span id="id217">blies</span> er den Rauch so die Wand hinauf daß er sich an der Decke sammelte und nicht zu riechen war. Diesen Trick aus Tschita hatte Vater auch schon während des Schulunterrichts in Deljatyn angewandt. Es war ein seltsamer Tag. Ich übernachtete bei Vater im Krankenhaus. In der <span id="id160">Nacht</span> bat Vater um eine Zigarrette, versuchte zu rauchen und <span id="id133">begriff</span>, daß er es nicht mehr konnte. Gegen Morgen starb im Nebenzimmer ein Mann.<br />
+		<br />
+		Er war sehr schwer, und ich half den Schwestern, den Toten auf eine Bahre zu legen, ihn in die Leichenhalle des Krankenhauses zu schieben und den Körper auf einen speziellen Tisch zu heben. Tagsüber versuchte ich, Vaters Fieber mit Essigumschlägen auf der Stirm und um die Handgelenke zu senken. Am Abend ging ich nach Hause, um ein wenig zu schlafen. Unser jüngerer Sohn fiel aus dem Bett und holte sich eine Platzwunde auf der Stirn. Wir fuhren mit der Rettung in die Kinderklinik. Der diensthabende Chirurg war betrunken. Die OP-Schwester hatte Besuch <br />
+		<br />
+		von ihrem Verlobten, und sie liebten sich in einem freien Zimmer irgendwo im Krankenhaus. Es gab kein Novocain. Der Chirurg war einverstanden, sich von mir assistieren zu lassen, und wir nähten die Wunde erfolgreich mit ein paar Stichen, dabei mußten wir sowohl meinen Sohn als auch die Nadel gut festhalten. Nach der Operation lud mich der Doktor auf ein Gläschen ein, gratulierte mir zur Initiation und gab mir Fünfzigtausend fürs Taxi, denn der Rettungswagen war längst beim nächsten Einsatz. Ein Jahr fuhr Vater einen alten fünftürigen Wolga, den die <br />
+		<br />
+		Rettung ausgesondert hatte, als Dienstwagen; solche Rettungsautos gab es, bis die Wagen der Rigaer Automobilfabrik aufkamen. Die Scheiben der vorderen Seitenfenster klemmten ständig. Wir hatten damals eine Luftdruckpistole. Auf der Rückfahrt von Deljatyn lehnte ich mich halb aus dem Fenster und zielte bei voller Geschwindigkeit auf Dinge, die Vater mir vorgab, meist auf Verkehrsschilder. Die Pistole begleitete meinen Bruder und mich mehrere Jahre lang. Wir stellten in unserem Zimmer leere Zündholzschachteln auf den Ofen und feuerten vor dem Einschlafen <br />
+		<br />
+		jeder ein paar Schüsse ab, einfach vom Bett aus. Nach dem <span id="id189">Aufwachen</span> nahmen wir uns die restlichen Schachteln vor. Jurko schoß absichtlich in die Wand, so daß dort mit der Zeit das Monogramm von Queen Victoria entstand, denn so hatte es Sherlock Holmes gemacht. Jurko kannte die Geschichten von  Sherlock Holmes bis ins kleinste Detail, er konnte fehlerlos die Nachnamen sämtlicher Protagonisten nennen, sogar jene der Nebenfiguren, ebenso alle Toponyme,  und er wußte, wie alle Anwesen, Gehöfte und Schlösser hießen, die in irgendeiner der Geschichten vorkamen. <br />
+		<br />
+		Sherlock Holmes weckte seinen Wissensdurst. Jurko begann sich mit Kunstgeschichte zu beschäftigen, mit Architektur, Landeskunde, Kriminalistik, Logik, Heraldik, mit den historischen Hilfswissenschaften, mit diplomatischer Etikette und diplomatischem Protokoll und mit der Terminologie verschiedenster Wissenbereiche. Er kennt Hunderte von Weinsorten. Auf einem speziellen Bogen Papier notierte Jurko die Namen von Schriftstellern und ihre Werke, die er aus allen ihm zugänglichen Quellen zusammentrug. Er interessierte sich nur für Autoren, die vor dem<br />
+		<br />
+		Ersten Weltkrieg geschrieben hatten und keine Ukrainer oder Russen waren. Als er fünfzehn Jahre alt war, umfaßte die Liste zweitausend Autoren. Der einzige gute Ukrainischlehrer ging jeden Tag mit Jurko ins Theater, zu allen klassischen Konzerten und in alle Kunstaustellungen. Bei Gastspielen fremder Theaterensembles schauten wir uns ein und dieselbe Vorstellung zwei oder drei Mal an, wenn in den Hauptrollen verschiedene Schauspieler auftraten. 
+	</div>
+
+
+	<div id="divSource6" class="DivSourceOff">
+		In Fragezeichenposition<br />
+		<br />
+		welche schmerzen, unter denen unsre jugend uns setzt in die welt<br />
+		welche schreie, mit denen wir uns aufrichten aus der stellung des <br />
+									fragezeichens<br />
+		in die stellung des aufrufezeichens<br />
+		die linke lippe polen und die rechte rußland öffnen sich<br />
+		und zum vorschein kommen unsere köpfe aus...<br />
+		doch woraus?<br />
+		schon sechzehn namen sind gefunden für den schnee<br />
+		zeit, sechzehn namen zu erfinden für die finsternis<br />
+		<br />
+		in der stellung des fragezeichens -<br />
+		mit unserem ganzen körper stellen wir uns in frage<br />
+		mit einem tropfen harn dazu als punkt.<br />
+		das sind wir? tatsächlich? stellen uns in frage?<br />
+		oder ist es ein zusammengerolltes strandhandtuch<br />
+		das die jugend trägt in ihrem bauch.<br />
+		<br />
+		so langsam krebsten<br />
+		die stumpfen hebammenscheren<br />
+		daß ihre schneiden bisweilen<br />
+		zu blankgeputzten straßen wurden<br />
+		an den scharnieren des kriegsobelisken.<br />
+		das traktorenwerk stellte auf die produktion von<br />
+							lockenwicklern um<br />
+		schickte jede woche ein körbchen<br />
+		geschenke der mutter.<br />
+		ihren lockenwicklerkopf<br />
+		ein ideales modell des sonnensystems -<br />
+		fotografierte man für kalender und alben.<br />
+		das lockenwicklereinzugsprinzip<br />
+		war die basis des nationalen mähdrescherbaus -<br />
+		und meine erste metapher<br />
+		die ich wutentbrannt wiederkäute<br />
+		als hätte ich einen schwanensee verschluckt.<br />
+		<br />
+		mein körper gehörte nicht mir:<br />
+		gekrümmt vor schmerz<br />
+		machte er karriere als fragezeichen in der korporation der sprache.<br />
+		<br />
+		bie bürokratie des körpers trieb mich in die enge:<br />
+			der kopf will nicht denken, sagt -<br />
+		sollen die augen sehen<br />
+			die augen wollen nicht sehen, sagen -<br />
+		sollen die ohren hörn<br />
+			die ohren wollen nicht hören, sagen -<br />
+		die nase rieche<br />
+			die nase will nicht riechen, spricht -<br />
+		sollen die hände tasten<br />
+			die hände tasten<br />
+		zählen blindlings an den wunden jahresringe<br />
+		<br />
+		schmerz – das ist ein labyrinth<br />
+		das die wanderer anlockt<br />
+		da es die gestalt ihrer sehnlichsten wünsche annimmt.<br />
+		<br />
+		mein körper erblüht in lindgrünem schmerz<br />
+		wo sind denn meine bienen? warum folgen sie nicht dem<br />
+		süßen duft?<br />
+		<br />
+		<br />
+		<br />
+		Jean-Paul Belmondo<br />
+		<br />
+		alles begann mit Ihrem steingesicht<br />
+		auf dem wie zwei robben die lippen lagen<br />
+		im küstennebel aus zigarettenrauch<br />
+		liefen Sie durch die straßen<br />
+		sie aufzuzählen hieße - <br />
+		den wellen des meeres namen zu geben<br />
+		<br />
+				Sie brachen die herzen der pariser limousinen<br />
+				so leicht und unbekümmert<br />
+				daß man belmonDO nicht aussprechen wollte<br />
+				ohne zuerst DOn juan zu sagen<br />
+		<br />
+		alles nahm seinen fortgang mit meinem<br />
+					  vom kleid in streifen<br />
+		gerissesnen <span id="id76">leib</span>. ich stand am rand des bürgersteigs<br />
+					  auf stöckeln<br />
+							  die waren der sechste zeh<br />
+		und ich zeigte Ihnen<br />
+		wo Sie parken konnten<br />
+		<br />
+		in derselben nacht<br />
+					  als wir beieinander lagen<br />
+						in dem park für die hunde<br />
+					 - die <span id="id6">blumen</span> bissen mich in den rücken! - <br />
+		flüsterten Sie:<br />
+			je länger ich schaue auf <span id="id154">deine</span> brustwarzenmünzen<br />
+			desto deutlicher sehe ich auf ihnen die königin<br />
+		<br />
+		körper und geld waren für Sie wie <br />
+		das ei und die henne.<br />
+		darüber daß<br />
+			“knipsbörse” eine metapher sein konnte<br />
+		waren Sie voll von den socken.<br />
+		klauten Sie geld, deklamierten Sie gern:<br />
+		eine börse ist eine börse ist eine<br />
+		und noch<br />
+		eine knipsbörse in der hand und in echt<br />
+		ist besser als eine andere im himmel, überm kopf<br />
+		<br />
+		Ihnen<br />
+		<br />
+			schob der tod den neuen tag wie ein goldstück zu<br />
+			und je mehr das backschisch anwuchs<br />
+			um so schwerer zurückzuwiesen war es<br />
+			um so tiefer beugten Sie sich Ihrem goldenen herzen<br />
+		<br />
+		da sagten Sie<br />
+		<br />
+			paris – ist so weiß nicht von nichts<br />
+			es ist aus meiner rippe gemacht.<br />
+			komm laß uns fahren dahin<br />
+			wo der <span id="id4">ozean</span> einst vor gott seinen rock hob<br />
+			und gott erbost über das was er sah<br />
+			befahl die stelle zu verdecken mit einer stadt<br />
+		<br />
+		mit der rechten hand umfaßten Sie meine taille,<br />
+		und mit der linken - <br />
+			liebkosten Sie das ohrläppchen der pistole<br />
+		ich sagte:<br />
+		gut, gehen wir!<br />
+		dieser stadttanzplatz<br />
+		war reduziert von der dunkelheit auf die größe<br />
+		eines schlafenden kinds, leicht geöffneten munds.<br />
+		die ausgestreckten hände der bettler hielt ich<br />
+		für zungen von hunden, vom speichel naß<br />
+		Sie besahen die beine:<br />
+			meine, der tische, der stühle, von andern<br />
+		<br />
+		dieser stadttanzplatz<br />
+		war für mich ein käfig darin die akkordeons<br />
+		die zähne bleckten gegen die krüppeligen <span id="id105">geigenleiber</span><br />
+		ich sagte:<br />
+		Sie - sind meine jugend<br />
+		ein apfel, der mich ißt, um sein wissen zu vergessen<br />
+		<br />
+		alles brach mit dem fallen des vorhangs ab.<br />
+		ihres körpers anker war die pistole.<br />
+		und eine frau, schöner und schlanker als ich<br />
+		die im salsatanz kreiste<br />
+		schnitt Ihnen durch die brust<br />
+			mit der schwingenden schneide<br />
+		ihres rocksaums, befleckt von päonien<br />
+		<br />
+		<br />
+		<br />
+		Opera<br />
+		<br />
+		die oper -<br />
+		ist ein fischmarkt<br />
+		wo der fisch mit dem silber seines körpers <span id="id152">singt</span><br />
+		da hebt der dirigent sein messer<br />
+		und aus den sängern schüttet's wie aus netzen<br />
+		den tiefseefisch hervor<br />
+		und wenn er sich auf dem holztisch windet<br />
+		und hysterisch das <span id="id28">meer</span> sucht <br />
+		den schweiß von den händen seines händlers leckt<br />
+		und das blut schluckt das auf den boden rinnt<br />
+		versucht es sich wieder einzuverleiben -<br />
+		wird das schuppensilber zur kugel geschmolzen<br />
+		und die kugel zielt den fisch auf die schläfe - <br />
+		sing! <br />
+		<br />
+		dort unter wasser wußte ja nicht <br />
+		daß er nicht nach einem köder schnappt<br />
+		sondern einer note<br />
+		und die angel eine Stradivari ist<br />
+		wie eine schlange beißt ihn das herz<br />
+		drei mal<br />
+		hosianna! hosianna! hosianna!<br />
+		die drei klingelzeichen - <br />
+		für den vater, den sohn und den <span id="id103">geist</span><br />
+		<br />
+		wer <span id="id190">bist</span> <span id="id195">du</span> – dirigent oder priester?<br />
+		ist dies ein taktstock oder ein kreuz?<br />
+		ps-ss-sst!<br />
+		<br />
+		opera!<br />
+		<br />
+		statt creolen trägt deine carmen schellentrommeln im ohr<br />
+		wie ein <span id="id216">waldhorn</span> nährt ihr herz sich von lippen<br />
+		in den adern kein blut, sondern die spur von küssen<br />
+		das blut aber – trägt sie auf der haut als gewand<br />
+		o carmen! aus dem opernhaus tragen wir heraus<br />
+		die konterbande, die <span id="id201">du</span> versteckt hast in unseren ohren<br />
+		<br />
+		o josé! schlank wie eine messerklinge<br />
+		du setzt die letzte note<br />
+		in den notenleib die zigeunerrippen<br />
+		<br />
+		opera!<br />
+		<br />
+		die stimmendegustation auf den nüchternen magen!<br />
+		weingarten <br />
+		deiner garderoben!<br />
+		wie würd ich barfuß gern durchlaufen dort<br />
+		unbekannt welchem ziel entgegen<br />
+		mit der wespe, die mir ins ohr flog<br />
+		wie soll das nicht jucken?<br />
+		<br />
+		violetta! ein baum entwuchs deinem munde<br />
+		wo aber ist der vogel<br />
+		der auf dem wipfel singt<br />
+		was hast du ihm vom gefieder gerupft<br />
+		und an die eigene brust gesteckt<br />
+		links<br />
+		<br />
+		opera – du verwundetes dunkel<br />
+		am <span id="id82">leib</span> des saales – die wunde der bühne<br />
+		deine töne stürzen aus den mündern<br />
+		wie ratten vom sinkenden schiff<br />
+		doch der rote vorhang<br />
+		wie vor moses das rote meer<br />
+		teilt er sich wieder <br />
+		und wir schreiten voran auf dem pfad<br />
+		in unseren muschelohren <br />
+		bis zur längsten, letzten note - <br />
+		der stille <br />
+		<br />
+
+
+	</div>
+
+
+
+	<div id="divAuthor">
+		Crauss:
+	</div>
+	
+	<div id="divResultText" class="DivSourceOn">
+		<span class="wlink2" onclick="wlinkClick(2, 0)">BLUMEN</span> [<span class="wlink4" onclick="wlinkClick(4, 1)">aarons</span> remix]<br />
+		<br />
+		<span class="wlink2" onclick="wlinkClick(2, 2)">blumen</span> <span class="wlink4" onclick="wlinkClick(4, 3)">blumen</span> <span class="wlink6" onclick="wlinkClick(6, 4)">ozeane</span> <span class="wlink1" onclick="wlinkClick(1, 5)">von</span> <span class="wlink6" onclick="wlinkClick(6, 6)">blumen</span> <span class="wlink2" onclick="wlinkClick(2, 7)">wo</span> <span class="wlink1" onclick="wlinkClick(1, 8)">man</span> <span class="wlink1" onclick="wlinkClick(1, 9)">schaut</span> <span class="wlink1" onclick="wlinkClick(1, 10)">blumenmuster</span> <span class="wlink1" onclick="wlinkClick(1, 11)">nicht</span> <span class="wlink1" onclick="wlinkClick(1, 12)">nur</span> <span class="wlink1" onclick="wlinkClick(1, 13)">nacht</span> <span class="wlink1" onclick="wlinkClick(1, 14)">aber</span> <span class="wlink1" onclick="wlinkClick(1, 15)">auch</span> <span class="wlink2" onclick="wlinkClick(2, 16)">nacht</span><br />
+		<span class="wlink1" onclick="wlinkClick(1, 17)">und</span> <span class="wlink2" onclick="wlinkClick(2, 18)">wo</span> <span class="wlink1" onclick="wlinkClick(1, 19)">man</span> <span class="wlink4" onclick="wlinkClick(4, 20)">schaut</span> <span class="wlink4" onclick="wlinkClick(4, 21)">rauscht</span> <span class="wlink1" onclick="wlinkClick(1, 22)">ein</span> <span class="wlink4" onclick="wlinkClick(4, 23)">leuchtendes</span> <span class="wlink4" onclick="wlinkClick(4, 24)">pulsierendes</span> <span class="wlink4" onclick="wlinkClick(4, 25)">meer</span> <span class="wlink1" onclick="wlinkClick(1, 26)">von</span> <span class="wlink4" onclick="wlinkClick(4, 27)">blüten</span> <span class="wlink6" onclick="wlinkClick(6, 28)">meer</span> <span class="wlink1" onclick="wlinkClick(1, 29)">von</span> <span class="wlink4" onclick="wlinkClick(4, 30)">vierspuriger</span> <span class="wlink4" onclick="wlinkClick(4, 31)">autobahn</span> <span class="wlink1" onclick="wlinkClick(1, 32)">nach</span> <span class="wlink1" onclick="wlinkClick(1, 33)">der</span> <span class="wlink4" onclick="wlinkClick(4, 34)">natur</span>:<br />
+		<span class="wlink3" onclick="wlinkClick(3, 35)">wo</span> <span class="wlink1" onclick="wlinkClick(1, 36)">man</span> <span class="wlink4" onclick="wlinkClick(4, 37)">schaut</span> <span class="wlink4" onclick="wlinkClick(4, 38)">schaut</span> <span class="wlink2" onclick="wlinkClick(2, 39)">man</span> <span class="wlink4" onclick="wlinkClick(4, 40)">getrocknete</span> <span class="wlink4" onclick="wlinkClick(4, 41)">photos</span> <span class="wlink2" onclick="wlinkClick(2, 42)">ganz</span> <span class="wlink4" onclick="wlinkClick(4, 43)">auge</span> <span class="wlink5" onclick="wlinkClick(5, 44)">auto</span> <span class="wlink4" onclick="wlinkClick(4, 45)">erstickt</span> <span class="wlink1" onclick="wlinkClick(1, 46)">am</span> <span class="wlink4" onclick="wlinkClick(4, 47)">alltäglichen</span><br />
+		<span class="wlink1" onclick="wlinkClick(1, 48)">am</span> <span class="wlink4" onclick="wlinkClick(4, 49)">abend</span> <span class="wlink4" onclick="wlinkClick(4, 50)">stürmt</span> <span class="wlink1" onclick="wlinkClick(1, 51)">es</span> <span class="wlink1" onclick="wlinkClick(1, 52)">über</span> <span class="wlink1" onclick="wlinkClick(1, 53)">den</span> <span class="wlink4" onclick="wlinkClick(4, 54)">hängen</span> <span class="wlink3" onclick="wlinkClick(3, 55)">rauscht</span> <span class="wlink4" onclick="wlinkClick(4, 56)">schnee</span> <span class="wlink1" onclick="wlinkClick(1, 57)">auf</span> <span class="wlink1" onclick="wlinkClick(1, 58)">ein</span> <span class="wlink4" onclick="wlinkClick(4, 59)">warmes</span> <span class="wlink4" onclick="wlinkClick(4, 60)">erreichbares</span> <span class="wlink4" onclick="wlinkClick(4, 61)">ziel</span> <span class="wlink1" onclick="wlinkClick(1, 62)">zu</span><br />
+		<br />
+		<span class="wlink1" onclick="wlinkClick(1, 63)">es</span> <span class="wlink1" onclick="wlinkClick(1, 64)">ist</span> <span class="wlink1" onclick="wlinkClick(1, 65)">zeit</span> <span class="wlink2" onclick="wlinkClick(2, 66)">wirklich</span> <span class="wlink1" onclick="wlinkClick(1, 67)">zeit</span> <span class="wlink1" onclick="wlinkClick(1, 68)">ich</span> <span class="wlink2" onclick="wlinkClick(2, 69)">bin</span> <span class="wlink1" onclick="wlinkClick(1, 70)">hier</span> <span class="wlink2" onclick="wlinkClick(2, 71)">du</span> <span class="wlink2" onclick="wlinkClick(2, 72)">bist</span> <span class="wlink4" onclick="wlinkClick(4, 73)">tot</span> <span class="wlink1" onclick="wlinkClick(1, 74)">und</span> <span class="wlink2" onclick="wlinkClick(2, 75)">tanzende</span> <span class="wlink6" onclick="wlinkClick(6, 76)">leiber</span><br />
+		<span class="wlink3" onclick="wlinkClick(3, 77)">wo</span> <span class="wlink2" onclick="wlinkClick(2, 78)">man</span> <span class="wlink4" onclick="wlinkClick(4, 79)">sieht</span> <span class="wlink4" onclick="wlinkClick(4, 80)">sieht</span> <span class="wlink2" onclick="wlinkClick(2, 81)">man</span> <span class="wlink6" onclick="wlinkClick(6, 82)">leiber</span> <span class="wlink4" onclick="wlinkClick(4, 83)">schwankende</span> <span class="wlink4" onclick="wlinkClick(4, 84)">gestalten</span> <span class="wlink3" onclick="wlinkClick(3, 85)">gebirge</span> <span class="wlink1" onclick="wlinkClick(1, 86)">und</span> <span class="wlink4" onclick="wlinkClick(4, 87)">bäume</span> <span class="wlink1" onclick="wlinkClick(1, 88)">ein</span> <span class="wlink5" onclick="wlinkClick(5, 89)">abendzug</span> <span class="wlink2" onclick="wlinkClick(2, 90)">laufen</span> <span class="wlink1" onclick="wlinkClick(1, 91)">und</span>  <span class="wlink2" onclick="wlinkClick(2, 92)">rennen</span> <span class="wlink1" onclick="wlinkClick(1, 93)">und</span> <span class="wlink1" onclick="wlinkClick(1, 94)">fallen</span> <span class="wlink1" onclick="wlinkClick(1, 95)">und</span> <span class="wlink4" onclick="wlinkClick(4, 96)">fliessen</span> <br />
+		<span class="wlink1" onclick="wlinkClick(1, 97)">und</span> <span class="wlink3" onclick="wlinkClick(3, 98)">wo</span> <span class="wlink3" onclick="wlinkClick(3, 99)">man</span> <span class="wlink2" onclick="wlinkClick(2, 100)">blickt</span> <span class="wlink2" onclick="wlinkClick(2, 101)">blickt</span> <span class="wlink3" onclick="wlinkClick(3, 102)">man</span> <span class="wlink6" onclick="wlinkClick(6, 103)">geister</span> <span class="wlink1" onclick="wlinkClick(1, 104)">und</span> <span class="wlink6" onclick="wlinkClick(6, 105)">geigenleiber</span> <span class="wlink1" onclick="wlinkClick(1, 106)">in</span> <span class="wlink1" onclick="wlinkClick(1, 107)">einem</span> <span class="wlink4" onclick="wlinkClick(4, 108)">orkan</span> <span class="wlink4" onclick="wlinkClick(4, 109)">ofen</span> <br />
+		<span class="wlink1" onclick="wlinkClick(1, 110)">den</span> <span class="wlink4" onclick="wlinkClick(4, 111)">dingen</span> <span class="wlink4" onclick="wlinkClick(4, 112)">einzuhauchen</span> <span class="wlink1" onclick="wlinkClick(1, 113)">die</span> <span class="wlink4" onclick="wlinkClick(4, 114)">nacht</span> <span class="wlink1" onclick="wlinkClick(1, 115)">eine</span> <span class="wlink4" onclick="wlinkClick(4, 116)">offenbarung</span> <span class="wlink1" onclick="wlinkClick(1, 117)">riesige</span> <span class="wlink3" onclick="wlinkClick(3, 118)">wahlheimat</span> <span class="wlink4" onclick="wlinkClick(4, 119)">inspiration</span> <br />
+		<span class="wlink1" onclick="wlinkClick(1, 120)">und</span> <span class="wlink4" onclick="wlinkClick(4, 121)">offen</span> <span class="wlink1" onclick="wlinkClick(1, 122)">und</span> <span class="wlink4" onclick="wlinkClick(4, 123)">windig</span> <span class="wlink1" onclick="wlinkClick(1, 124)">eine</span> <span class="wlink3" onclick="wlinkClick(3, 125)">strasse</span> <span class="wlink1" onclick="wlinkClick(1, 126)">ein</span> <span class="wlink2" onclick="wlinkClick(2, 127)">weiter</span> <span class="wlink1" onclick="wlinkClick(1, 128)">gewölbter</span> <span class="wlink4" onclick="wlinkClick(4, 129)">himmel</span> <span class="wlink1" onclick="wlinkClick(1, 130)">als</span> <span class="wlink2" onclick="wlinkClick(2, 131)">du</span> <span class="wlink1" onclick="wlinkClick(1, 132)">es</span> <span class="wlink5" onclick="wlinkClick(5, 133)">begreifen</span> <span class="wlink5" onclick="wlinkClick(5, 134)">kannst</span><br />
+		<span class="wlink1" onclick="wlinkClick(1, 135)">die</span> <span class="wlink3" onclick="wlinkClick(3, 136)">tanzschule</span> <span class="wlink2" onclick="wlinkClick(2, 137)">planeten</span> <span class="wlink1" onclick="wlinkClick(1, 138)">denn</span> <span class="wlink2" onclick="wlinkClick(2, 139)">jetzt</span> <span class="wlink1" onclick="wlinkClick(1, 140)">ist</span> <span class="wlink1" onclick="wlinkClick(1, 141)">es</span> <span class="wlink2" onclick="wlinkClick(2, 142)">zeit</span><br />
+		<br />
+		<span class="wlink2" onclick="wlinkClick(2, 143)">es</span> <span class="wlink2" onclick="wlinkClick(2, 144)">ist</span> <span class="wlink1" onclick="wlinkClick(1, 145)">die</span> <span class="wlink2" onclick="wlinkClick(2, 146)">zeit</span> <span class="wlink1" onclick="wlinkClick(1, 147)">der</span> <span class="wlink3" onclick="wlinkClick(3, 148)">letzten</span> <span class="wlink2" onclick="wlinkClick(2, 149)">tage</span> <span class="wlink1" onclick="wlinkClick(1, 150)">und</span> <span class="wlink2" onclick="wlinkClick(2, 151)">du</span> <span class="wlink6" onclick="wlinkClick(6, 152)">singst</span><br />
+		<span class="wlink1" onclick="wlinkClick(1, 153)">und</span> <span class="wlink6" onclick="wlinkClick(6, 154)">deine</span> <span class="wlink2" onclick="wlinkClick(2, 155)">stimme</span> <span class="wlink1" onclick="wlinkClick(1, 156)">hat</span> <span class="wlink1" onclick="wlinkClick(1, 157)">die</span> <span class="wlink1" onclick="wlinkClick(1, 158)">kraft</span> <span class="wlink1" onclick="wlinkClick(1, 159)">der</span> <span class="wlink5" onclick="wlinkClick(5, 160)">nacht</span><br />
+		<span class="wlink1" onclick="wlinkClick(1, 161)">und</span> <span class="wlink4" onclick="wlinkClick(4, 162)">wo</span> <span class="wlink2" onclick="wlinkClick(2, 163)">du</span> <span class="wlink3" onclick="wlinkClick(3, 164)">blickst</span> <span class="wlink3" onclick="wlinkClick(3, 165)">blickst</span> <span class="wlink2" onclick="wlinkClick(2, 166)">du</span> <span class="wlink4" onclick="wlinkClick(4, 167)">systemwandel</span> <span class="wlink1" onclick="wlinkClick(1, 168)">und</span> <span class="wlink4" onclick="wlinkClick(4, 169)">selbsttäuschung</span> <span class="wlink1" onclick="wlinkClick(1, 170)">die</span> <span class="wlink2" onclick="wlinkClick(2, 171)">strasse</span><br />
+		<span class="wlink2" onclick="wlinkClick(2, 172)">ist</span> <span class="wlink2" onclick="wlinkClick(2, 173)">eine</span> <span class="wlink4" onclick="wlinkClick(4, 174)">unruhe</span> <span class="wlink1" onclick="wlinkClick(1, 175)">in</span> <span class="wlink5" onclick="wlinkClick(5, 176)">träumen</span> <span class="wlink1" onclick="wlinkClick(1, 177)">mehr</span> <span class="wlink1" onclick="wlinkClick(1, 178)">nicht</span> <span class="wlink1" onclick="wlinkClick(1, 179)">und</span> <span class="wlink2" onclick="wlinkClick(2, 180)">nicht</span> <span class="wlink1" onclick="wlinkClick(1, 181)">mehr</span> <span class="wlink1" onclick="wlinkClick(1, 182)">der</span> <span class="wlink2" onclick="wlinkClick(2, 183)">weg</span> <span class="wlink1" onclick="wlinkClick(1, 184)">der</span> <span class="wlink4" onclick="wlinkClick(4, 185)">planeten</span><br />
+		<br />
+		<span class="wlink2" onclick="wlinkClick(2, 186)">doch</span> <span class="wlink1" onclick="wlinkClick(1, 187)">wenn</span> <span class="wlink5" onclick="wlinkClick(5, 188)">du</span> <span class="wlink5" onclick="wlinkClick(5, 189)">aufwachst</span> <span class="wlink6" onclick="wlinkClick(6, 190)">bist</span> <span class="wlink5" onclick="wlinkClick(5, 191)">du</span> <span class="wlink3" onclick="wlinkClick(3, 192)">stark</span> <span class="wlink1" onclick="wlinkClick(1, 193)">und</span> <span class="wlink2" onclick="wlinkClick(2, 194)">wenn</span> <span class="wlink6" onclick="wlinkClick(6, 195)">du</span> <span class="wlink3" onclick="wlinkClick(3, 196)">aufhörst</span> <span class="wlink1" onclick="wlinkClick(1, 197)">mit</span> <span class="wlink1" onclick="wlinkClick(1, 198)">schwelgen</span> <span class="wlink1" onclick="wlinkClick(1, 199)">dann</span> <span class="wlink2" onclick="wlinkClick(2, 200)">bist</span> <span class="wlink6" onclick="wlinkClick(6, 201)">du</span> <span class="wlink4" onclick="wlinkClick(4, 202)">tot</span><br />
+		<span class="wlink1" onclick="wlinkClick(1, 203)">und</span> <span class="wlink1" onclick="wlinkClick(1, 204)">ein</span> <span class="wlink3" onclick="wlinkClick(3, 205)">wind</span>  <span class="wlink2" onclick="wlinkClick(2, 206)">eine</span> <span class="wlink1" onclick="wlinkClick(1, 207)">riesiger</span> <span class="wlink3" onclick="wlinkClick(3, 208)">atem</span> <span class="wlink4" onclick="wlinkClick(4, 209)">riesengrosser</span> <span class="wlink3" onclick="wlinkClick(3, 210)">wind</span><br />
+		<span class="wlink1" onclick="wlinkClick(1, 211)">und</span> <span class="wlink1" onclick="wlinkClick(1, 212)">der</span> <span class="wlink4" onclick="wlinkClick(4, 213)">offene</span> <span class="wlink2" onclick="wlinkClick(2, 214)">weg</span> <span class="wlink1" onclick="wlinkClick(1, 215)">ein</span> <span class="wlink6" onclick="wlinkClick(6, 216)">waldhorn</span> <span class="wlink5" onclick="wlinkClick(5, 217)">blasen</span> <span class="wlink2" onclick="wlinkClick(2, 218)">gekleidet</span> <span class="wlink1" onclick="wlinkClick(1, 219)">in</span> <span class="wlink3" onclick="wlinkClick(3, 220)">sonne</span><br />
+		<span class="wlink1" onclick="wlinkClick(1, 221)">und</span> <span class="wlink2" onclick="wlinkClick(2, 222)">dann</span> <span class="wlink1" onclick="wlinkClick(1, 223)">nur</span> <span class="wlink1" onclick="wlinkClick(1, 224)">noch</span> <span class="wlink2" onclick="wlinkClick(2, 225)">stille</span> —<br />
+		<br />
+		<br />
+
+
+
+	</div>
+</div>
+
+<div id="footer_bar">
+	<a href="http://validator.w3.org/check?uri=referer">valid</a> XHTML 1.0 Strict
+</div>
+
+</body>
+
+</html>
